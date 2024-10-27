@@ -1,0 +1,27 @@
+{
+  "name": "aws-cognito-neon-authorize",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "copy:dev": "cp -r node_modules/htmx.org/dist/htmx.js public/htmx.js",
+    "copy:prod": "cp -r node_modules/htmx.org/dist/htmx.min.js public/htmx.js",
+    "start": "node --env-file=.env main.js",
+    "dev": "node --env-file=.env --watch main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.679.0",
+    "@neondatabase/serverless": "^0.10.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "htmx.org": "^1.9.12",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0"
+  }
+}
