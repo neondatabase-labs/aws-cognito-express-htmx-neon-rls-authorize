@@ -7,13 +7,24 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <nav>
+      <h1>AWS Cognito + Neon Authorize Demo</h1>
+      <div className="logout">
+        <button hx-post="/auth/logout" hx-trigger="click">Logout</button>
+      </div>
+    </nav>
     <div class="todo-app">
-      <h2>Neon Authorize + AWS Cognito</h2>
-      <form hx-post="/todos" hx-trigger="submit">
+      <h2>Todo App</h2>
+      <form hx-post="/todos" hx-trigger="submit" hx-target="#todo-list">
         <input name="title" type="text" placeholder="Add a new todo" />
         <button type="submit">Add</button>
       </form>
-      <h2>Loading …</h2>
+      <ul
+        hx-trigger="load"
+        id="todo-list"
+        hx-get="/todos"
+        hx-swap="innerHTML"
+      ></ul>
     </div>
     <script src="./htmx.js"></script>
   </body>

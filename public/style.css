@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: cornflowerblue;
+}
+button {
+  cursor: pointer;
+}
+
+body {
+  background: linear-gradient(135deg, #00e599 25%, #b9ffb3 75%);
+  font-family: "Roboto", sans-serif;
+  animation: gradientAnimation 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+descope-wc {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+nav {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logout p {
+  margin-bottom: 10px;
+}
+
+.todo-app {
+  margin-top: 20px;
+  min-width: 500px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  min-height: 75vh;
+}
+
+.todo-app h2 {
+  margin-bottom: 20px;
+}
+
+.todo-app form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.todo-app form input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #01a26c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ul {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+li button {
+  background-color: transparent;
+}
+
+li {
+  list-style: none;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login-container {
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-width: 500px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-container input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-footer button {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
