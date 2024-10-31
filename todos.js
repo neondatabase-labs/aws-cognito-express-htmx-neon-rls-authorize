@@ -16,12 +16,6 @@ async function getTodos(token) {
     SELECT * FROM todos;
   `;
 
-  // const rows = [
-  //   { id: 1, title: "Buy milk", done: false },
-  //   { id: 2, title: "Buy eggs", done: true },
-  //   { id: 3, title: "Buy bread", done: false },
-  // ];
-
   return rows.map((row) => todoTemplate(row));
 }
 
@@ -41,10 +35,11 @@ router.post("/", async (req, res) => {
   if (!token) {
     return res.status(401).send("Unauthorized");
   }
+
   const sql = getDb(token);
   await sql`
-    INSERT INTO todos (title, done)
-    VALUES (${req.body.title}, ${req.body.done});
+    INSERT INTO todos (title, done, user_id)
+    VALUES (${req.body.title}, false, auth.user_id());
   `;
   const todos = await getTodos(token);
   res.send(todos.join(""));
@@ -55,6 +50,12 @@ router.post("/:id/toggle", async (req, res) => {
   if (!token) {
     return res.status(401).send("Unauthorized");
   }
+  const sql = getDb(token);
+  await sql`
+    UPDATE todos
+    SET done = NOT done
+    WHERE id = ${req.params.id} AND user_id = auth.user_id();
+  `;
   const todos = await getTodos(token);
   res.send(todos.join(""));
 });
@@ -64,6 +65,11 @@ router.delete("/:id", async (req, res) => {
   if (!token) {
     return res.status(401).send("Unauthorized");
   }
+  const sql = getDb(token);
+  await sql`
+    DELETE FROM todos
+    WHERE id = ${req.params.id} AND user_id = auth.user_id();
+  `;
   const todos = await getTodos(token);
   res.send(todos.join(""));
 });
