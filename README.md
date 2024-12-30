@@ -1,3 +1,5 @@
+<img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
+
 # AWS Cognito + Neon Authorize Demo
 
 This is a demo of [Neon Authorize](https://neon.tech/docs/guides/neon-authorize) together with Amazon Web Services' Cognito. This is a minimal app and doesn't exhaustively have all features, but rather just the features neededed to demonstrate how Cognito and Neon Authorize can work together. Namely this app does not have password reset, proper error messaging, or other things necessary for full proper auth support.
