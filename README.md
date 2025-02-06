@@ -1,8 +1,8 @@
 <img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
 
-# AWS Cognito + Neon Authorize Demo
+# AWS Cognito + Neon RLS Authorize Demo
 
-This is a demo of [Neon Authorize](https://neon.tech/docs/guides/neon-authorize) together with Amazon Web Services' Cognito. This is a minimal app and doesn't exhaustively have all features, but rather just the features neededed to demonstrate how Cognito and Neon Authorize can work together. Namely this app does not have password reset, proper error messaging, or other things necessary for full proper auth support.
+This is a demo of [Neon RLS Authorize](https://neon.tech/docs/guides/neon-authorize) together with Amazon Web Services' Cognito. This is a minimal app and doesn't exhaustively have all features, but rather just the features neededed to demonstrate how Cognito and Neon RLS Authorize can work together. Namely this app does not have password reset, proper error messaging, or other things necessary for full proper auth support.
 
 # The Stack
 
@@ -12,7 +12,7 @@ This is a demo of [Neon Authorize](https://neon.tech/docs/guides/neon-authorize)
 - Node.js
 - Express.js
 
-We have other stacks that work with other providers (Next.js, React.js, Nest.js, Solid.js, etc.) if you want other examples. [Checkout the neondatabase-labs org on GitHub](https://github.com/neondatabase-labs?q=authorize).
+We have other stacks that work with other providers (Next.js, React.js, Nest.js, Solid.js, etc.) if you want other examples. [Checkout the neondatabase-labs org on GitHub](https://github.com/neondatabase-labs?q=rls-authorize).
 
 # Setup
 
@@ -33,7 +33,7 @@ We have other stacks that work with other providers (Next.js, React.js, Nest.js,
    9. Enter an app name
    10. Don't generate a client secret (or do, but you'll have to add code to handle the secretHash)
    11. Create User Pool
-7.  Copy the "Token signing key URL" from the main page of your new Cognito Instance, go to the Neon console of your new project, click "Authorize" in the side bar, add a new provider, and paste the Token signing key URL in there.
+7.  Copy the "Token signing key URL" from the main page of your new Cognito Instance, go to the Neon console of your new project, go into settings, click "RLS Authorize" in the side bar, add a new provider, and paste the Token signing key URL in there.
 8.  When the side drawer opens after you add the key (which can be opened later too), run the top two commands to enable the Postgres extension in Neon.
 9.  Copy the SQL in schema.sql and run it in the SQL Editor (or run it via psql).
 10. Copy .env.template to .env
