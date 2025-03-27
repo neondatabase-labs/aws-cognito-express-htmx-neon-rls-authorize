@@ -1,8 +1,8 @@
 <img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
 
-# AWS Cognito + Neon RLS Authorize Demo
+# AWS Cognito + Neon RLS Example
 
-This is a demo of [Neon RLS Authorize](https://neon.tech/docs/guides/neon-authorize) together with Amazon Web Services' Cognito. This is a minimal app and doesn't exhaustively have all features, but rather just the features neededed to demonstrate how Cognito and Neon RLS Authorize can work together. Namely this app does not have password reset, proper error messaging, or other things necessary for full proper auth support.
+This is a demo of [Neon RLS](https://neon.tech/docs/guides/neon-rls) together with Amazon Web Services' Cognito. This is a minimal app and doesn't exhaustively have all features, but rather just the features neededed to demonstrate how Cognito and Neon RLS can work together. Namely this app does not have password reset, proper error messaging, or other things necessary for full proper auth support.
 
 # The Stack
 
@@ -12,14 +12,20 @@ This is a demo of [Neon RLS Authorize](https://neon.tech/docs/guides/neon-author
 - Node.js
 - Express.js
 
-We have other stacks that work with other providers (Next.js, React.js, Nest.js, Solid.js, etc.) if you want other examples. [Checkout the neondatabase-labs org on GitHub](https://github.com/neondatabase-labs?q=rls-authorize).
+We have other stacks that work with other providers (Next.js, React.js, Nest.js, Solid.js, etc.) if you want other examples. [Checkout the neondatabase-labs org on GitHub](https://github.com/neondatabase-labs?q=rls).
+
+## Prerequisites
+
+- [Neon](https://neon.tech) account with a new project
+- [AWS Cognito](https://docs.aws.amazon.com/cognito) account with a new user pool
+- Node.js installed locally
 
 # Setup
 
 1. Sign up for neon.tech and AWS.
 2. Clone this repo
-3. Install Node.js 20.6+ as well as npm
-4. Run npm install in the directory of this project
+3. Install Node.js 20.6+ as well as `npm`
+4. Run `npm install` in the directory of this project
 5. Create a new Neon.tech project. AWS or Azure works fine. For now it must be Postgres 16 (not 17).
 6. Create a new AWS Cognito instance
    1. Choose email for sign-in options
@@ -33,10 +39,24 @@ We have other stacks that work with other providers (Next.js, React.js, Nest.js,
    9. Enter an app name
    10. Don't generate a client secret (or do, but you'll have to add code to handle the secretHash)
    11. Create User Pool
-7.  Copy the "Token signing key URL" from the main page of your new Cognito Instance, go to the Neon console of your new project, go into settings, click "RLS Authorize" in the side bar, add a new provider, and paste the Token signing key URL in there.
+7.  Copy the "Token signing key URL" from the main page of your new Cognito Instance, go to the Neon console of your new project, go into settings, click "RLS" in the side bar, add a new provider, and paste the Token signing key URL in there.
 8.  When the side drawer opens after you add the key (which can be opened later too), run the top two commands to enable the Postgres extension in Neon.
-9.  Copy the SQL in schema.sql and run it in the SQL Editor (or run it via psql).
+9.  Copy the SQL in `schema.sql` and run it in the SQL Editor (or run it via `psql)`.
 10. Copy .env.template to .env
-11. Get the COGNITO_REGION and COGNITO_CLIENT_ID from your AWS Cognito app you made.
-12. Get **authenticated** role connection string from your Neon console. This is different than the neondb_owner string, it does not have an embedded password.
+11. Get the `COGNITO_REGION` and `COGNITO_CLIENT_ID` from your AWS Cognito app you made.
+12. Get **authenticated** role connection string from your Neon console. This is different than the `neondb_owner` string, it does not have an embedded password.
 13. Run npm run dev to start your app!
+
+## Learn More
+
+- [Neon RLS Tutorial](https://neon.tech/docs/guides/neon-rls-tutorial)
+- [AWS Cognito Documentation](https://docs.aws.amazon.com/cognito/)
+- [Neon RLS + AWS Cognito Integration](https://neon.tech/docs/guides/neon-rls-aws-cognito)
+
+## Authors
+
+- [Brian Holt](https://github.com/btholt)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
